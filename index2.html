@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 드라마 퀴즈</title>
+    <style>
+        /* 선택지를 파란색으로 변경하는 CSS */
+        .selected {
+            color: blue;
+            cursor: pointer;
+        }
+
+        /* 퀴즈 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* 선택지 마우스 호버 스타일 */
+        li:hover {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>한국 드라마 퀴즈</h1>
+
+    <h2>질문 3:</h2>
+    <p id="question3">어느 한국 드라마에서 경찰서와 무법지역을 오가며 범죄를 해결하는 이야기가 나옵니다?</p>
+    <ul>
+        <li id="q3a">a) 킹덤</li>
+        <li id="q3b">b) 이태원 클라쓰</li>
+        <li id="q3c">c) 왓쳐</li>
+    </ul>
+
+    <script>
+        // 각 질문의 정답을 정의합니다.
+        var answers = {
+            question3: 'q3c'
+            // 나머지 질문들도 유사한 방식으로 정의
+        };
+
+        // 선택지를 클릭했을 때 호출되는 함수
+        function checkAnswer(questionId, selectedId) {
+            // 선택한 요소를 파란색으로 변경합니다.
+            document.getElementById(selectedId).classList.add('selected');
+            // 정답을 확인합니다.
+            var answerId = answers[questionId];
+            if (selectedId === answerId) {
+                alert('정답입니다!');
+                // 정답인 경우 다음 화면으로 이동합니다.
+                window.location.href = 'index3.html';
+            } else {
+                alert('틀렸습니다!');
+            }
+        }
+
+        // 각 선택지에 클릭 이벤트를 추가합니다.
+        document.getElementById('q3a').addEventListener('click', function() {
+            checkAnswer('question3', 'q3a');
+        });
+        document.getElementById('q3b').addEventListener('click', function() {
+            checkAnswer('question3', 'q3b');
+        });
+        document.getElementById('q3c').addEventListener('click', function() {
+            checkAnswer('question3', 'q3c');
+        });
+    </script>
+</body>
+</html>

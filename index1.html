@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 드라마 퀴즈</title>
+    <style>
+        /* 전체 body 스타일 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        /* 헤더 스타일 */
+        h1 {
+            margin-top: 30px;
+            color: #007bff;
+            font-size: 36px;
+        }
+
+        /* 질문 영역 스타일 */
+        .question-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* 선택지 스타일 */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        li {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        li:hover {
+            color: #007bff;
+        }
+
+        /* 선택된 항목 스타일 */
+        .selected {
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>한국 드라마 퀴즈</h1>
+
+    <!-- 질문 영역 -->
+    <div class="question-container">
+        <h2>질문 2:</h2>
+        <p id="question2">어느 한국 드라마에서 가난한 여자가 특급 가정의 가정부로 들어가는 이야기가 나옵니다?</p>
+        <ul>
+            <li id="q2a" onclick="checkAnswer('question2', 'q2a')">a) 태양의 후예</li>
+            <li id="q2b" onclick="checkAnswer('question2', 'q2b')">b) 스카이 캐슬</li>
+            <li id="q2c" onclick="checkAnswer('question2', 'q2c')">c) 이태원 클라쓰</li>
+        </ul>
+    </div>
+
+    <script>
+        // 정답 체크 함수
+        function checkAnswer(questionId, selectedId) {
+            // 선택한 요소를 파란색으로 변경
+            var selectedElement = document.getElementById(selectedId);
+            selectedElement.classList.add('selected');
+
+            // 정답 확인
+            var answerId = answers[questionId];
+            if (selectedId === answerId) {
+                alert('정답입니다!');
+                // 정답인 경우 다음 화면으로 이동
+                window.location.href = 'index2.html';
+            } else {
+                alert('틀렸습니다!');
+            }
+        }
+    </script>
+</body>
+</html>
